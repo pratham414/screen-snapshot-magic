@@ -11,11 +11,12 @@ const Chip = ({ children, className }: ChipProps) => {
   return (
     <div 
       className={cn(
-        "chip animate-fade-in", 
+        "flex items-center gap-2 py-1.5 text-supplier-text", 
         className
       )}
     >
-      {children}
+      <div className="w-1.5 h-1.5 rounded-full bg-supplier-blue"></div>
+      <span>{children}</span>
     </div>
   );
 };
