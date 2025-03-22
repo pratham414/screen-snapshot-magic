@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,19 +36,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -97,5 +91,47 @@
 
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
+
+.chip {
+  @apply inline-flex items-center px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-700 transition-all;
+}
+
+.chip:hover {
+  @apply bg-gray-200;
+}
+
+.tab-button {
+  @apply px-6 py-3 font-medium text-gray-600 border-b-2 border-transparent transition-all duration-200;
+}
+
+.tab-button.active {
+  @apply border-supplier-blue text-supplier-blue;
+}
+
+.tag-container {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.info-badge {
+  @apply inline-flex items-center gap-2 rounded-md border border-gray-200 px-3 py-1.5 text-sm bg-white transition-all duration-200;
+}
+
+.info-badge:hover {
+  @apply border-gray-300 shadow-sm;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.certificate-badge {
+  @apply flex items-center gap-2 p-4 border rounded-lg bg-white transition-all;
+}
+
+.certificate-badge:hover {
+  @apply shadow-sm border-gray-300;
 }
